@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../constants.dart';
 
 class TitleWithMoreBtn extends StatelessWidget {
@@ -18,14 +17,14 @@ class TitleWithMoreBtn extends StatelessWidget {
       child: Row(
         children: <Widget>[
           TitleWithCustomUnderline(text: title),
-          Spacer(),
+          const Spacer(),
           FlatButton(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20),
             ),
             color: kPrimaryColor,
             onPressed: press(),
-            child: Text(
+            child: const Text(
               "More",
               style: TextStyle(color: Colors.white),
             ),
@@ -54,7 +53,7 @@ class TitleWithCustomUnderline extends StatelessWidget {
             padding: const EdgeInsets.only(left: kDefaultPadding / 4),
             child: Text(
               text,
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
           ),
           Positioned(
@@ -62,7 +61,7 @@ class TitleWithCustomUnderline extends StatelessWidget {
             left: 0,
             right: 0,
             child: Container(
-              margin: EdgeInsets.only(right: kDefaultPadding / 4),
+              margin: const EdgeInsets.only(right: kDefaultPadding / 4),
               height: 7,
               color: kPrimaryColor.withOpacity(0.2),
             ),

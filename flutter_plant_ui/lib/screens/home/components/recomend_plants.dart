@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_plant_ui/screens/details/details_screen.dart';
-
 import '../../../constants.dart';
 
 class RecomendsPlants extends StatelessWidget {
@@ -20,12 +18,12 @@ class RecomendsPlants extends StatelessWidget {
             country: "Russia",
             price: 440,
             press: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => DetailsScreen(),
-                ),
-              );
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(
+              //     builder: (_) => const DetailsScreen(),
+              //   ),
+              // );
             },
           ),
           RecomendPlantCard(
@@ -34,12 +32,12 @@ class RecomendsPlants extends StatelessWidget {
             country: "Russia",
             price: 440,
             press: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => DetailsScreen(),
-                ),
-              );
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(
+              //     builder: (_) => const DetailsScreen(),
+              //   ),
+              // );
             },
           ),
           RecomendPlantCard(
@@ -47,7 +45,14 @@ class RecomendsPlants extends StatelessWidget {
             title: "Samantha",
             country: "Russia",
             price: 440,
-            press: () {},
+            press: () {
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(
+              //     builder: (_) => const DetailsScreen(),
+              //   ),
+              // );
+            },
           ),
         ],
       ),
@@ -73,7 +78,7 @@ class RecomendPlantCard extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      margin: EdgeInsets.only(
+      margin: const EdgeInsets.only(
         left: kDefaultPadding,
         top: kDefaultPadding / 2,
         bottom: kDefaultPadding * 2.5,
@@ -85,16 +90,16 @@ class RecomendPlantCard extends StatelessWidget {
           GestureDetector(
             onTap: press(),
             child: Container(
-              padding: EdgeInsets.all(kDefaultPadding / 2),
+              padding: const EdgeInsets.all(kDefaultPadding / 2),
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   bottomLeft: Radius.circular(10),
                   bottomRight: Radius.circular(10),
                 ),
                 boxShadow: [
                   BoxShadow(
-                    offset: Offset(0, 10),
+                    offset: const Offset(0, 10),
                     blurRadius: 50,
                     color: kPrimaryColor.withOpacity(0.23),
                   ),
@@ -109,7 +114,7 @@ class RecomendPlantCard extends StatelessWidget {
                             text: "$title\n".toUpperCase(),
                             style: Theme.of(context).textTheme.button),
                         TextSpan(
-                          text: "$country".toUpperCase(),
+                          text: country.toUpperCase(),
                           style: TextStyle(
                             color: kPrimaryColor.withOpacity(0.5),
                           ),
@@ -117,7 +122,7 @@ class RecomendPlantCard extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Text(
                     '\$$price',
                     style: Theme.of(context)
